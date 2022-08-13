@@ -4,6 +4,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 export default function Home() {
   let [searchParams] = useSearchParams();
   let navigate = useNavigate();
+  
   useEffect(() => {
     let token = searchParams.get("token");
     if (token) {
