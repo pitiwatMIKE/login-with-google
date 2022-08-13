@@ -10,7 +10,10 @@ passport.use(
       callbackURL: "/auth/google/callback",
       scope: ["profile", "email"],
     },
-    function (accessToken, refreshToken, profile, callback) {
+    function (_accessToken, _refreshToken, profile, callback) {
+      // logic about database
+      // ....
+
       callback(null, profile);
     }
   )
