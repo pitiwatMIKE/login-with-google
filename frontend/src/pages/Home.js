@@ -10,7 +10,7 @@ export default function Home() {
       localStorage.setItem("auth", token);
       navigate("/profile");
     }
-  }, [searchParams]);
+  }, [searchParams, navigate]);
 
   const googleAuth = () => {
     window.open(
