@@ -1,0 +1,5 @@
+CLIENT_URL = "http://localhost:3000"
+JWT_SECRET = "JWT_SECRET_KEY"
+MONGODB_HOST = ""
+CLIENT_ID = ""
+CLIENT_SECRET = ""

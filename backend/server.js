@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
+require("./db/myDB").connect();
 require("./config/passport");
 const auth = require("./routes/auth");
 const verifyJwt = require("./routes/verifyJwt");
