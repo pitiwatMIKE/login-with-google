@@ -1,16 +1,19 @@
 import React, { useEffect } from "react";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { getCookie, removeToken } from "../utils/handlerCookie";
 
 export default function Home() {
-  let [searchParams] = useSearchParams();
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+
   useEffect(() => {
-    let token = searchParams.get("token");
+    let token = getCookie("token");
+
     if (token) {
       localStorage.setItem("auth", token);
+      removeToken("token");
       navigate("/profile");
     }
-  }, [searchParams, navigate]);
+  }, [navigate]);
 
   const googleAuth = () => {
     window.open(

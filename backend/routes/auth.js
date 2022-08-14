@@ -19,7 +19,8 @@ router.get(
       };
 
       let token = generateJwtToken(user);
-      res.redirect(`${process.env.CLIENT_URL}?token=${token}`);
+      res.cookie("token", token, { maxAge: 1000 * 60 * 2 });
+      res.redirect(`${process.env.CLIENT_URL}`);
     } catch (e) {
       res.status(401).redirect(`${process.env.CLIENT_URL}/failed`);
     }
